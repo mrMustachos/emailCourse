@@ -1,16 +1,26 @@
 const express = require('express');
+const mongoose = require('mongoose');
+const cookieSession = require('cookie-session');
 const passport = require('passport');
-const googleStrategy = require('passport-google-oauth20').Strategy;
+const keys = require('./config/keys');
+require('./models/User');
+require('./services/passport');
+
+mongoose.connect(keys.mongoURI);
 
 const app = express();
 
-// Commom PassportJS Issues:
-//  - Does require us to reach into spcific points of the flow to make stuff work
-//  - inharent confusion on how the library is constructed
-//     • you always need passport [http://www.passportjs.org/docs/]
-//     • you also need the libs for the type of auth you are trying to do ie fb, google, email/password, ect [http://www.passportjs.org/packages/]
+app.use(
+	cookieSession({
+		maxAge: 30 * 24 * 60 * 60 * 1000,
+		keys: [keys.cookieKey]
+	})
+);
 
-passport.use(new googleStrategy());
+app.use(passport.initialize());
+app.use(passport.session());
+
+require('./routes/authRoutes')(app);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);
