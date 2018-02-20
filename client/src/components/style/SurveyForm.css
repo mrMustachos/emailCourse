@@ -1,0 +1,7 @@
+form { margin-top: 40px; }
+.button_container { margin-top: 20px; }
+.button_container:after {
+	content: "";
+	display: table;
+	clear: both;
+}

@@ -5,5 +5,6 @@ module.exports = {
 	cookieKey: 'GET_FROM_DEVS_LOCAL',
 	stripePublishableKey: 'STRIPE_PUBLISHABLE_KEY_HERE',
 	stripeSecretKey: 'STRIPE_SECRET_KEY_HERE',
-	sendGridKey: 'SENDGRID_KEY_HERE'
+	sendGridKey: 'SENDGRID_KEY_HERE',
+	redirectDomain: 'http://localhost:3000'
 };

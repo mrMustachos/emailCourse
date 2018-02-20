@@ -30,7 +30,7 @@ class Header extends Component {
 						className="left brand-logo"
 						style={{ paddingLeft: '15px' }}
 						to={ this.props.auth ? '/surveys' : '/' }
-					>Logo</Link>
+					><i className="large material-icons">email</i>Logo</Link>
 					<ul className="right">
 						{ this.renderContent() }
 					</ul>
