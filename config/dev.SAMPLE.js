@@ -6,5 +6,7 @@ module.exports = {
 	stripePublishableKey: 'STRIPE_PUBLISHABLE_KEY_HERE',
 	stripeSecretKey: 'STRIPE_SECRET_KEY_HERE',
 	sendGridKey: 'SENDGRID_KEY_HERE',
-	redirectDomain: 'http://localhost:3000'
+	redirectDomain: 'http://localhost:3000',
+	phishKey: 'PHISH_KEY_HERE',
+	phishPubKey: 'PHISH_PUB_KEY_HERE'
 };

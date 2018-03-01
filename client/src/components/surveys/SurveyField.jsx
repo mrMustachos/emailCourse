@@ -3,7 +3,7 @@ import React from 'react';
 import '../style/SurveyField.css';
 
 export default ({ input, label, meta }) => {
-	// console.log(meta);
+	// console.log(input);
 	return (
 		<div className="row">
 			<div className={ meta.touched && meta.error ? 'input-field col s12 invalid' : 'input-field col s12' }>

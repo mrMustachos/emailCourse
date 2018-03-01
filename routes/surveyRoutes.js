@@ -7,6 +7,9 @@ const requireCredits = require('../services/requireCredits');
 const Mailer = require('../services/Mailer');
 const surveyTemplate = require('../services/emailTemplates/surveyTemplate');
 
+const keys = require('../config/keys');
+const request = require('request');
+
 const Survey = mongoose.model('surveys');
 
 module.exports = (app) => {
