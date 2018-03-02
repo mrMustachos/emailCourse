@@ -11,20 +11,7 @@ const requestP = require('request-promise-native');
 
 
 module.exports = (app) => {
-  app.get('/phishnet/setlist', requireLogin, async (req, res) => {
-    const setlistPromise = requestP(options('/setlists/get', { showdate: '2017-08-06' }));
-    const jamchartPromise = requestP(options('/jamcharts/all'));
-    
-    const [setlist, jamchart] = await Promise.all([setlistPromise, jamchartPromise]);
-    const cleaned = await setlistDataCleaner(setlist.response.data[0], jamchart.response.data);
-    res.send(cleaned);
-  });
-};
-
-
-
-module.exports = (app) => {
-  app.get('/phishnet/test', requireLogin, generateSetlist, async (req, res) => {
+  app.get('/phishnet/setlist', requireLogin, generateSetlist, async (req, res) => {
     const base = req.res.locals.base;
     const jamId = base.jam_id;
     var jamDeets = [];

@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const requireLogin = require('../services/requireLogin');
 const requireCredits = require('../services/requireCredits');
 const Mailer = require('../services/Mailer');
-const surveyTemplate = require('../services/emailTemplates/surveyTemplate');
+const surveyTemplate = require('../services/templates/surveyTemplate');
 
 const keys = require('../config/keys');
 const request = require('request');
