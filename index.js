@@ -5,13 +5,13 @@ const passport = require('passport');
 const bodyParser = require('body-parser');
 const path = require('path');
 
-const keys = require('./config/keys');
-const routes = require('./routes/index');
-
-
 require('./models/User');
 require('./models/Survey');
 require('./services/passport');
+
+const keys = require('./config/keys');
+const routes = require('./routes/index');
+
 
 mongoose.connect(keys.mongoURI);
 

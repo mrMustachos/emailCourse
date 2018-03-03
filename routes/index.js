@@ -4,12 +4,13 @@ const authController = require('../controllers/authController');
 const phishController = require('../controllers/phishController');
 const billingController = require('../controllers/billingController');
 const surveyController = require('../controllers/surveyController');
+const mailboxController = require('../controllers/mailboxController');
 
-// router.get('/api/surveys', authController.checkLogin, surveyController.getSurveys);
-// router.post('/api/surveys', authController.checkLogin, authController.checkCredits, surveyController.sendSurveys);
+router.get('/api/surveys', authController.checkLogin, surveyController.getSurveys);
+router.post('/api/surveys', authController.checkLogin, authController.checkCredits, surveyController.sendSurveys);
 
-// router.get('/api/surveys/:surveyId/:choice', surveyController.thanksPage);
-// router.post('/api/surveys/webhooks', surveyController.webhooks);
+router.get('/api/surveys/:surveyId/:choice', mailboxController.thanksPage);
+router.post('/api/surveys/webhooks', mailboxController.webhooks);
 
 
 router.get( '/auth/google', authController.googleLogin);
